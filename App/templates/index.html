@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative AI Tasarım Uygulaması</title>
+</head>
+<body>
+    <h1>Generative AI Tasarım Uygulaması</h1>
+
+    <form method="post" action="/generate_design">
+        <label for="hedefler">Tasarım Hedefleri:</label>
+        <input type="text" name="hedefler" required><br>
+
+        <label for="stil_tercihleri">Stil Tercihleri:</label>
+        <input type="text" name="stil_tercihleri" required><br>
+
+        <label for="teknik_gereksinimler">Teknik Gereksinimler:</label>
+        <input type="text" name="teknik_gereksinimler" required><br>
+
+        <button type="submit">Tasarım Oluştur</button>
+    </form>
+
+    {% if yeni_tasarim %}
+        <h2>Yeni Tasarım:</h2>
+        <p>{{ yeni_tasarim }}</p>
+    {% endif %}
+
+    {% if geri_bildirim %}
+        <p>{{ geri_bildirim }}</p>
+    {% endif %}
+</body>
+</html>
